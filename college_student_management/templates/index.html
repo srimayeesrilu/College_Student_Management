@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #f4f4f4; }
+        a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <h1>College Student Management</h1>
+    <a href="/add">+ Add New Student</a>
+    <table>
+        <tr>
+            <th>ID</th><th>Age</th><th>Gender</th><th>Major</th><th>GPA</th><th>Risk</th>
+        </tr>
+        {% for s in students %}
+        <tr>
+            <td>{{ s.student_id }}</td>
+            <td>{{ s.age }}</td>
+            <td>{{ s.gender }}</td>
+            <td>{{ s.major }}</td>
+            <td>{{ s.GPA }}</td>
+            <td>{{ s.risk_level }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
